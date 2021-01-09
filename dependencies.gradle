@@ -1,0 +1,41 @@
+// Top-level build file listing all dependencies.
+
+ext {
+    buildConfig = [
+            minSdk      : 15,
+            minSdkJsr310: 26,
+            compileSdk  : 30,
+            targetSdk   : 30,
+    ]
+    versions = [
+            androidxjUnit     : '1.1.1',
+            androidxTestRunner: '1.2.0',
+            appCompat         : '1.1.0',
+            emoji             : '1.1.0',
+            jodaTime          : '2.10.6',
+            jodaTimeAndroid   : '2.10.6',
+            jUnit             : '4.13',
+            kotlin            : '1.4.10',
+            mockito           : '3.3.3',
+            robolectric       : '4.3.1',
+            threeTen          : '1.4.4',
+            threeTenAbp       : '1.2.4',
+    ]
+    libraries = [
+            appCompat      : "androidx.appcompat:appcompat:${versions.appCompat}",
+            emoji          : "androidx.emoji:emoji-bundled:${versions.emoji}",
+            jodaTime       : "joda-time:joda-time:${versions.jodaTime}",
+            jodaTimeAndroid: "net.danlew:android.joda:${versions.jodaTimeAndroid}",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+            threeTen       : "org.threeten:threetenbp:${versions.threeTen}",
+            threeTenAbp    : "com.jakewharton.threetenabp:threetenabp:${versions.threeTenAbp}",
+    ]
+    testing = [
+            androidxjUnit     : "androidx.test.ext:junit:${versions.androidxjUnit}",
+            androidxTestRunner: "androidx.test:runner:${versions.androidxTestRunner}",
+            jUnit             : "junit:junit:${versions.jUnit}",
+            mockitoCore       : "org.mockito:mockito-core:${versions.mockito}",
+            mockitoInline     : "org.mockito:mockito-inline:${versions.mockito}",
+            robolectric       : "org.robolectric:robolectric:${versions.robolectric}",
+    ]
+}

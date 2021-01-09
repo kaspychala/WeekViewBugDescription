@@ -1,0 +1,38 @@
+group = 'com.github.thellmund.Android-Week-View'
+version = '5.2.1'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion buildConfig.compileSdk
+    defaultConfig {
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation project(':base')
+    implementation libraries.kotlin
+    implementation libraries.appCompat
+
+    testImplementation testing.androidxjUnit
+    testImplementation testing.androidxTestRunner
+    testImplementation testing.jUnit
+    testImplementation testing.mockitoCore
+    testImplementation testing.mockitoInline
+    testImplementation testing.robolectric
+}

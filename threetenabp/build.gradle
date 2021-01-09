@@ -1,0 +1,33 @@
+group = 'com.github.thellmund.Android-Week-View'
+version = '5.2.1'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion buildConfig.compileSdk
+    defaultConfig {
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':core')
+
+    implementation libraries.kotlin
+    implementation libraries.appCompat
+    implementation libraries.threeTenAbp
+
+    testImplementation libraries.threeTen
+
+    testImplementation testing.jUnit
+    testImplementation testing.mockitoCore
+    testImplementation testing.mockitoInline
+}
